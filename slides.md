@@ -30,28 +30,52 @@ Not that kind recap you think
 
 ---
 
-## transition: fade-out
+## 來回顧一下 2025 React 生態圈的大事
 
-# What is Slidev?
+<div class="flex justify-center items-center gap-12 mt-20">
+<div>
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+<br>
+<br>
+<br>
+<br>
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-  <br>
-  <br>
+<v-click at="1">
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+<div :class="$clicks >= 2 ? 'line-through' : ''">
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
+## React 19
+
+</div>
+
+</v-click>
+
+<span></span>
+
+<br>
+
+<v-click at="3">
+
+<div :class="$clicks >= 4 ? 'line-through' : ''">
+
+## React conf 2025
+
+</div>
+
+</v-click>
+
+<v-click at='4'>
+<span></span>
+</v-click>
+
+</div>
+
+<div class="flex items-center justify-center">
+  <v-click at="2">
+    <img src="/assets/img/thinking meme.jpg" class="w-80 rounded-xl shadow-lg" />
+  </v-click>
+</div>
+</div>
 
 <style>
 h1 {
@@ -548,6 +572,16 @@ Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML D
 foo: bar
 dragPos:
 square: 691,32,167,\_,-16
+
+---
+
+dragPos:
+square: -62,0,0,0
+
+---
+
+dragPos:
+square: -62,0,0,0
 
 ---
 

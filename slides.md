@@ -122,3 +122,19 @@ Here is another comment.
 <div class="flex items-center justify-center h-full">
   <img src="/assets/img/middle.png" class="h-100 rounded-xl shadow-lg" />
 </div>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+ <h1>Next.js 當然也有類似的服務</h1>
+ <v-click>
+  <h1>但跟其他的服務不同 Vercel 開源 Next.js</h1>
+  <h1>是為了幫自家雲服務搶占市場</h1>
+ </v-click>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>

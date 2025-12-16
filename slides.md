@@ -138,3 +138,224 @@ Here is another comment.
     color: black;
   }
 </style>
+
+---
+
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/vercel1.png" class="w-150 rounded-xl shadow-lg" />
+</div>
+
+---
+
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/vercel2.png" class="w-150 rounded-xl shadow-lg" />
+</div>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+ <h1>但有個小問題，如果 middleware 沒考慮 CDN 部屬場景的話</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/vercel3.png" class="w-150 rounded-xl shadow-lg" />
+</div>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+ <h1>當然 Vercel 發現了這個問題並做出修正</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/next30282.png" class="w-150 rounded-xl shadow-lg" />
+</div>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+```ts {all|5}
+function getFetchHeaders(middleware: string, init: RequestInit) {
+  const headers = new Headers(init.headers ?? {});
+  const prevsub = headers.get(`x-middleware-subrequest`) || "";
+  const value = prevsub.split(":").concat(middleware).join(":");
+  headers.set(`x-middleware-subrequest`, value);
+  headers.set(`user-agent`, `Next.js Middleware`);
+  return headers;
+}
+```
+<br>
+
+<h1>方法就是幫請求加上特殊的 header 來標記他是由 middleware 發出的請求</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/next30282-2.png" class="w-150 rounded-xl shadow-lg" />
+</div>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/thinking meme.jpg" class="h-100 rounded-xl shadow-lg" />
+</div>
+<h1>聽起來好像有點奇怪</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+ <h1>header 應該是可以隨意填的，如果我假造一個 header 會被判定成 middleware 的請求嗎?</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+ <h1>還真的可以</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+ <h1>從發布 MR 一直到 2025/3/1 有外部資安專家發現並回報 vercel 才發現這個漏洞</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+```ts
+  const randomBytes = new Uint8Array(8)
+  crypto.getRandomValues(randomBytes)
+  const middlewareSubrequestId = Buffer.from(randomBytes).toString('hex')
+  ;(globalThis as any)[Symbol.for('@next/middleware-subrequest-id')] =
+    middlewareSubrequestId
+```
+
+<br>
+
+<h1>方法就是再加一個隨機數的 header</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/thinking meme.jpg" class="h-100 rounded-xl shadow-lg" />
+</div>
+<h1>所以問題解決了?</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+ <h1>並沒有</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+  <ul>
+    <li>在CDN這種冷啟動環境，產生隨機數的成本不低</li>
+    <li>重新導向的請求不一定會回到同一個session</li>
+    <li>部分CDN設計甚至不是回到同一台機器上</li>
+  </ul>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+ <h1>一週後 Vercel 發了新的 PR</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>
+
+---
+
+<div class='flex flex-col items-center justify-center h-full'>
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/next77474.png" class="h-100 rounded-xl shadow-lg" />
+</div>
+<h1>你們自己想辦法吧 ovob</h1>
+</div>
+
+<style>
+  h1{
+    color: black;
+  }
+</style>

@@ -107,6 +107,11 @@ Here is another comment.
 
 ---
 
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/cve202529927.png" class="h-100 rounded-xl shadow-lg" />
+</div>
+
+---
 # Navigation
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)

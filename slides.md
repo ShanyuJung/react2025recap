@@ -119,6 +119,12 @@ Here is another comment.
 
 ---
 
+<div class="flex items-center justify-center h-full">
+  <img src="/assets/img/middle.png" class="h-100 rounded-xl shadow-lg" />
+</div>
+
+---
+
 # Navigation
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
@@ -603,8 +609,10 @@ dragPos:
 square: -62,0,0,0
 
 ---
+
 dragPos:
-  square: -62,0,0,0
+square: -62,0,0,0
+
 ---
 
 # Draggable Elements
@@ -652,7 +660,6 @@ src: ./pages/imported-slides.md
 hide: false
 
 ---
-
 
 ---
 
